@@ -1,5 +1,5 @@
 class SessionsController < ActionController::API
-    skip_before_action :confirm_authentication, only: :create 
+    # skip_before_action :confirm_authentication, only: :create 
 
     def create 
         user = User.find_by(username: params[:username])

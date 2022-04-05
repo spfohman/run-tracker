@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :confirm_authentication
+    # skip_before_action :confirm_authentication
     def create 
         user  = User.create(user_params)
         if user.valid?

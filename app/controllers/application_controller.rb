@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
 rescue_from ActiveRecord::RecordNotFound, with: :not_found 
-  before_action :confirm_authentication 
+  # before_action :confirm_authentication 
 
   private 
   def current_user 
@@ -11,7 +11,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
   def logged_in? 
     !!current_user 
   end
-  
+
   def confirm_authentication 
     render json: {error: "You must be logged in to access that information."}, status: :unauthorized unless logged_in? 
   end
